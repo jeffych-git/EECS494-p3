@@ -1,0 +1,18 @@
+Initial Issues:
+    Cards had low mana costs, and the mana bar filled quickly.
+    Players had low health, allowing for rapid card use and very short gameplay.
+    Game generally lacked visual appeal as characters were static.
+
+Solutions:
+    Increased player health.
+    Added new card types to extend gameplay and enhance strategy:
+        Attack cards: Deal instant damage.
+        Block cards: Temporarily block incoming damage.
+        Bow cards: Shoot an arrow that damages on impact.
+        Heal cards: Restore player health.
+        Heavy attack cards: Charge, then deal damage.
+        Shield cards: Provide a shield around the player.
+
+Visual Improvements:
+    Added idle animations for characters in battle.
+    Added animations for different card actions.
