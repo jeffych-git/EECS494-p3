@@ -48,16 +48,13 @@ public class pauseMenu : MonoBehaviour
 
     private void menuKeyPress()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (pauseMenuUI.activeSelf)
         {
-            if (pauseMenuUI.activeSelf)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            Resume();
+        }
+        else
+        {
+            Pause();
         }
     }
 

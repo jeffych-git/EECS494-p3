@@ -31,7 +31,7 @@ public class RandomEncounter : MonoBehaviour
 
                 string enemy_name = RandomlySelectEnemy();
                 InitiateEnemy(enemy_name);
-                EventBus.Publish(new BeginEncounter());
+                EventBus.Publish(new BeginEncounter(encounterRate >= 1));
 
                 StartCoroutine(DisableMovementAfter(other));
                 if (encounterRate < 1)

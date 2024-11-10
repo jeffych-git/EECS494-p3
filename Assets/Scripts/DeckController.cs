@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DeckController : MonoBehaviour
 {
@@ -11,15 +12,49 @@ public class DeckController : MonoBehaviour
     public List<GameObject> discard_pile = new List<GameObject>();
     //private DiscardPileController dpc; 
 
-/*    public GameObject current_pile_object;
-    public GameObject discard_pile_object;*/
+    /*    public GameObject current_pile_object;
+        public GameObject discard_pile_object;*/
 
     /*private int hand_size;
     public int selected_card = 0;
     private int current_pile_index = 0;
     private int discard_pile_index = 0;*/
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
+    {
+        // Register to the sceneLoaded event
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        // Unregister from the sceneLoaded event
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "PvE") // Check if it's the correct scene
+        {
+            if(transform.childCount <= 0)
+            {
+                for (int i = 0; i < DataManager.Instance.all_card_prefabs.Length; i++)
+                {
+                    int num_each_card = DataManager.Instance.player_deck[i];
+                    for (int j = 0; j < num_each_card; j++)
+                    {
+                        GameObject card = Instantiate(
+                            DataManager.Instance.all_card_prefabs[i], 
+                            transform.position, 
+                            transform.rotation, 
+                            transform);
+                    }
+                }
+            }
+        }
+    }
+
+        void Start()
     {
         //hand_size = hand.Length;
         //hand_size = GetChildren(hand).Count;

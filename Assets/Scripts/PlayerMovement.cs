@@ -109,7 +109,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (scene.name == "Overworld") // Check if it's the correct scene
         {
-            transform.position = DataManager.Instance.player_position;
+            if (BattleDataManager.Instance.is_victory)
+            {
+                transform.position = DataManager.Instance.player_position;
+            }
+            else
+            {
+                transform.position = DataManager.Instance.respawn_point;
+            }
         }
     }
 }

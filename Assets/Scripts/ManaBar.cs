@@ -73,5 +73,10 @@ public class Mana
     {
         return manaAmount;
     }
+
+    public void toggleManaRegen()
+    {
+        manaRegenAmount = manaRegenAmount == 0 ? 10f : 0;
+    }
 }
 

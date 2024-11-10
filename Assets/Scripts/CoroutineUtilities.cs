@@ -189,6 +189,22 @@ public class CoroutineUtilities : MonoBehaviour
     }
 
 
+    public static IEnumerator MakeSpriteColorOverTime(
+        Transform target, Color targetColor, float duration_sec)
+    {
+        float initial_time = Time.time;
+        float progress = (Time.time - initial_time) / duration_sec;
+        Color startColor = target.gameObject.GetComponent<SpriteRenderer>().color;
+
+        while (progress < 1.0f)
+        {
+            progress = (Time.time - initial_time) / duration_sec;
+
+            target.gameObject.GetComponent<SpriteRenderer>().color = Color.Lerp(startColor, targetColor, progress);
+
+            yield return null;
+        }
+    }
     public static IEnumerator StartContinuousAnimation(SpriteRenderer sr, Sprite[] sprites, float frame_speed)
     {
         while (true)
@@ -199,5 +215,11 @@ public class CoroutineUtilities : MonoBehaviour
                 yield return new WaitForSeconds(frame_speed);
             }
         }
+    }
+
+    public static IEnumerator SetActiveAfterSeconds(GameObject g, float seconds) 
+    {
+        yield return new WaitForSeconds(seconds);
+        g.SetActive(true);
     }
 }

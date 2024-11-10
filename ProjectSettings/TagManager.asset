@@ -43,3 +43,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: InventoryMenu
+    uniqueID: 3911944665
+    locked: 0
+  - name: cards
+    uniqueID: 2408761431
+    locked: 0

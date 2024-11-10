@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3815737694578085575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7485144428775912709}
+  - component: {fileID: 2631808102555201255}
+  m_Layer: 0
+  m_Name: DataManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7485144428775912709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815737694578085575}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2631808102555201255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3815737694578085575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4fe5bc27e2e4b4887853c866b4152b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_position: {x: 6, y: -4, z: 0}
+  encountered_enemy: 
+  all_card_prefabs:
+  - {fileID: 3224382692473585597, guid: ccbde2c54201a054b84bb8132e172854, type: 3}
+  - {fileID: 318758009414348558, guid: 0b1644d91de915b44a48f5664a6acf22, type: 3}
+  - {fileID: 6912518862758935021, guid: 58d87a2f4757aa3468d59edb4406ee7b, type: 3}
+  - {fileID: 2774815110969406853, guid: f445829ab92a7614c80bfef7bb94a8dd, type: 3}
+  - {fileID: 2925291231194676919, guid: 3fc32d207deefe445ad3876435867d91, type: 3}
+  - {fileID: 318758009414348558, guid: b3d1d6025b6924042b0771dec80738bf, type: 3}
+  player_deck: 000000000000000000000000000000000000000000000000
+  owned_cards: 050000000500000005000000050000000500000005000000

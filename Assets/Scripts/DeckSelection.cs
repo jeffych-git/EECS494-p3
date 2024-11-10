@@ -48,7 +48,8 @@ public class DeckSelection : MonoBehaviour
     {
         if(currentCards >= minCards)
         {
-            SceneManager.LoadScene("PvP");
+            //SceneManager.LoadScene("Overworld");
+            EventBus.Publish(new CloseInventory());
         }
         else
         {

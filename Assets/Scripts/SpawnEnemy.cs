@@ -51,5 +51,30 @@ public class SpawnEnemy : MonoBehaviour
                 Debug.LogWarning("Prefab not found at path: " + prefab_path);
             }
         }
+        else if(scene.name == "Tutorial")
+        {
+            prefab_path = "Prefabs/tutorial/tutorial_Battle";
+
+
+            // Load the prefab from the Resources folder
+            GameObject prefab = Resources.Load<GameObject>(prefab_path);
+
+            if (prefab != null)
+            {
+                // Instantiate the prefab at the specified position and rotation
+                GameObject newObject = Instantiate(prefab);
+
+                // Set the current GameObject as the parent of the new object
+                newObject.transform.SetParent(transform);
+
+                /*            // Optionally, reset local position/rotation to align with the parent
+                            newObject.transform.localPosition = spawnPosition;
+                            newObject.transform.localRotation = spawnRotation;*/
+            }
+            else
+            {
+                Debug.LogWarning("Prefab not found at path: " + prefab_path);
+            }
+        }
     }
 }

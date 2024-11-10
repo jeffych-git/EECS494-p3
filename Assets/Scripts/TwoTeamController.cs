@@ -11,12 +11,16 @@ public class TwoTeamController : MonoBehaviour
     public List<GameObject> player1Chars; // characters start off as disabled, enable the first one in Start()
     public List<GameObject> player2Chars; // characters start off as disabled, enable the first one in Start()
 
+    public int p1SelectedCard = 0;
+
     private HandController player1HandController;
     private HandController player2HandController;
     GameObject curPlayer1Char;
     GameObject curPlayer2Char;
     int player1CharsDead = 0;
     int player2CharsDead = 0;
+
+    public bool tutorialActive = false;
     void Start()
     {
         EventBus.Subscribe<CharacterDead>(OnCharacterDead);
@@ -42,23 +46,30 @@ public class TwoTeamController : MonoBehaviour
     {
         if (Input.GetKeyDown("1"))
         {
-            EventBus.Publish(new SelectCard(player1HandController, 0));
+            p1SelectedCard = 0;
+            EventBus.Publish(new SelectCard(player1HandController, p1SelectedCard));
         }
         else if (Input.GetKeyDown("2"))
         {
-            EventBus.Publish(new SelectCard(player1HandController, 1));
+            p1SelectedCard = 1;
+            EventBus.Publish(new SelectCard(player1HandController, p1SelectedCard));
         }
         else if (Input.GetKeyDown("3"))
         {
-            EventBus.Publish(new SelectCard(player1HandController, 2));
+            p1SelectedCard = 2;
+            EventBus.Publish(new SelectCard(player1HandController, p1SelectedCard));
         }
         else if (Input.GetKeyDown("4"))
         {
-            EventBus.Publish(new SelectCard(player1HandController,3));
+            p1SelectedCard = 3;
+            EventBus.Publish(new SelectCard(player1HandController,p1SelectedCard));
         }
         if (Input.GetMouseButtonDown(0))
         {
-            player1HandController.TryPlayCard();
+            if (!tutorialActive)
+            {
+                player1HandController.TryPlayCard();
+            }
         }
         if (!player2IsNPC)
         {
